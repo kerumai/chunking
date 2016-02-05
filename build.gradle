@@ -1,0 +1,27 @@
+apply plugin: 'application'
+
+repositories { jcenter() }
+
+dependencies {
+
+    compile 'io.netty:netty-common:4.1.0.CR1'
+    compile 'io.netty:netty-buffer:4.1.0.CR1'
+    compile 'io.netty:netty-codec-http:4.1.0.CR1'
+    compile 'io.netty:netty-codec-http2:4.1.0.CR1'
+    compile 'io.netty:netty-handler:4.1.0.CR1'
+    compile 'io.netty:netty-resolver:4.1.0.CR1'
+    compile 'io.netty:netty-transport:4.1.0.CR1'
+    compile 'io.netty:netty-transport-native-epoll:4.1.0.CR1'
+
+}
+
+mainClassName = 'com.kerumai.chunking.Server'
+run {
+    classpath = sourceSets.main.runtimeClasspath
+
+    String appRoot = projectDir.getAbsolutePath()
+
+    systemProperty 'app.dir', "${appRoot}"
+    systemProperty 'java.awt.headless', 'true'
+}
+
