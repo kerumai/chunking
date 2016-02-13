@@ -23,5 +23,17 @@
     <orderEntry type="library" exported="" name="Gradle: io.netty:netty-transport:4.1.0.CR1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: io.netty:netty-transport-native-epoll:4.1.0.CR1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: io.netty:netty-codec:4.1.0.CR1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.slf4j:slf4j-api:1.7.10" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.slf4j:slf4j-log4j12:1.7.10" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.netflix.archaius:archaius-core:0.7.3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.google.code.findbugs:jsr305:3.0.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-configuration:commons-configuration:1.8" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.google.guava:guava:16.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.4.3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.4.3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.4.3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-lang:commons-lang:2.6" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-logging:commons-logging:1.1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: log4j:log4j:1.2.17" level="project" />
   </component>
 </module>
