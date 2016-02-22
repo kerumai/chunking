@@ -171,6 +171,9 @@ public class AppHandler extends ChannelInboundHandlerAdapter
         if (path.endsWith(".png")) {
             return "image/png";
         }
+        if (path.endsWith(".ico")) {
+            return "image/x-icon";
+        }
         return "text/html";
     }
 

@@ -32,6 +32,7 @@ public class Server
     private static final Logger LOG = LoggerFactory.getLogger(Server.class);
     private static final LoggingHandler nettyLogger = new LoggingHandler("server.nettylog", LogLevel.INFO);
 
+    private static final DynamicIntProperty SERVER_PORT = new DynamicIntProperty("server.netty.port", 7001);
     private static final DynamicIntProperty SERVER_SOCKET_TIMEOUT = new DynamicIntProperty("server.netty.connection.socket.timeout", 45 * 000);
     private static final DynamicIntProperty SERVER_CONN_IDLE_TIMEOUT_SECS = new DynamicIntProperty("server.netty.connection.idle.timeout", 30);
     private static final DynamicBooleanProperty USE_EPOLL = new DynamicBooleanProperty("server.netty.socket.epoll", false);
@@ -42,9 +43,6 @@ public class Server
      */
     private ServerGroup serverGroup;
 
-    private int port = 7001;
-
-
     public static void main(String[] args)
     {
         new Server().start();
@@ -52,7 +50,8 @@ public class Server
 
     public void start()
     {
-        LOG.info("Starting server at port: " + this.port);
+        int port = SERVER_PORT.get();
+        LOG.info("Starting server at port: " + port);
         serverGroup = new ServerGroup("ChunkingServer");
         serverGroup.initializeTransport();
         try {
