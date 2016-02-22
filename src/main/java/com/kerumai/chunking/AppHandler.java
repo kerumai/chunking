@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 public class AppHandler extends ChannelInboundHandlerAdapter
 {
     private static final Logger LOG = LoggerFactory.getLogger(AppHandler.class);
-    private static final DynamicLongProperty CHUNK_PAUSE_MS = new DynamicLongProperty("server.chunk.pause", 1000);
+    private static final DynamicLongProperty CHUNK_PAUSE_MS = new DynamicLongProperty("server.chunk.pause", 300);
     private HttpRequest request = null;
 
     @Override
@@ -122,6 +122,11 @@ public class AppHandler extends ChannelInboundHandlerAdapter
             serveFile(ctx, path);
         }
 
+        else if (request.uri().equals("/favicon.ico")) {
+            String path = "/web/clean/favicon.ico";
+            serveFile(ctx, path);
+        }
+
         else {
             HttpResponse response = new DefaultHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.NOT_FOUND);
             ctx.write(response);
@@ -173,6 +178,9 @@ public class AppHandler extends ChannelInboundHandlerAdapter
         }
         if (path.endsWith(".ico")) {
             return "image/x-icon";
+        }
+        if (path.endsWith(".woff2")) {
+            return "font/woff2";
         }
         return "text/html";
     }
