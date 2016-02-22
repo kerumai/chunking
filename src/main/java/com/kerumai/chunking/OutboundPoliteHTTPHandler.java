@@ -5,6 +5,8 @@ import io.netty.channel.ChannelOutboundHandlerAdapter;
 import io.netty.channel.ChannelPromise;
 import io.netty.handler.codec.http.*;
 import io.netty.util.AttributeKey;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * User: Mike Smith
@@ -13,6 +15,8 @@ import io.netty.util.AttributeKey;
  */
 public class OutboundPoliteHTTPHandler extends ChannelOutboundHandlerAdapter
 {
+    private static final Logger LOG = LoggerFactory.getLogger(OutboundPoliteHTTPHandler.class);
+
     private final static AttributeKey<Boolean> KEY_SHOULD_CLOSE = AttributeKey.newInstance("_hvoh_close_conn");
     private final static AttributeKey<Boolean> KEY_CLOSE_NOW = AttributeKey.newInstance("_hvoh_close_now");
 
@@ -92,5 +96,17 @@ public class OutboundPoliteHTTPHandler extends ChannelOutboundHandlerAdapter
     public void close(ChannelHandlerContext ctx, ChannelPromise promise) throws Exception
     {
         // We choose when to close the channel ourselves, so ignore this invocation.
+    }
+
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception
+    {
+        HttpRequest request = ctx.attr(InboundPoliteHTTPHandler.KEY_REQUEST).get();
+
+        LOG.error("Unhandled exception caught. uri=" + request.uri(), cause);
+
+        Utils.sendDefaultErrorResponse(ctx);
+
+        super.exceptionCaught(ctx, cause);
     }
 }

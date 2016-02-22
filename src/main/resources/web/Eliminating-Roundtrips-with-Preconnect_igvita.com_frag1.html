@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Eliminating Roundtrips with Preconnect - igvita.com</title>
+    <script type="text/javascript" async="" src="./Eliminating-Roundtrips-with-Preconnect_igvita.com_files/analytics.js"></script><script type="text/javascript">window.mod_pagespeed_start = Number(new Date());</script><script>var dataLayer=dataLayer||[];dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});</script>
+    <script src="https://www.googletagmanager.com/gtm.js?id=GTM-49CP" async="" defer=""></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link rel="stylesheet" href="./Eliminating-Roundtrips-with-Preconnect_igvita.com_files/css.css">
+    <style>footer,header{display:block}html{font-size:100%;overflow-y:scroll;-webkit-tap-highlight-color:rgba(0,0,0,0);-ms-text-size-adjust:100%;-webkit-text-size-adjust:none;background-color:#000}body{margin:0;font-size:14px;line-height:1.61;font-weight:400}body{font-family:'Open Sans',sans-serif;color:#333}::-moz-selection{background:#bfbebd;color:#222;text-shadow:none}::selection{background:#bfbebd;color:#222;text-shadow:none}a{color:#12c}a:visited{color:#61c}a:focus{outline:thin dotted}a:hover,a:active{color:#c00;outline:0}b,strong{font-weight:bold}pre,code{font-family:monospace,monospace;_font-family:'courier new' , monospace;font-size:1em}pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}img{border:0;-ms-interpolation-mode:bicubic}svg:not(:root) {overflow:hidden}body{background:#fff}#container{}.content,#copyright .group,#meta .group{max-width:55em;margin:0 auto}header,#copyright{background:#000;color:#fff}header,#main{padding:1em 2em}header span{font-size:13px;color:#bfbfbf}header a,header a:visited,footer a,footer a:visited{color:#fff;text-decoration:none}header a:hover,footer a:hover{color:#bfbfbf;text-decoration:none}#main{background:#fff;padding-top:1em}h1{margin-top:0;padding-top:.5em}.byline{font-size:13px;color:#999;margin:-1.5em 0 1.5em 0;font-style:italic}#meta{background:#272727;color:#858585}#meta a{color:#bfbfbf}#meta a:hover{color:#fff}#meta h3{margin:0}#meta .book-cover{display:block;width:137px;height:178px;float:left;margin-right:1em;margin-top:.8em;background:url(https://1-ps.googleusercontent.com/sk/bYSmB63yuhjL_l7bPRuu4R3ENi/www.igvita.com/posts/projects/xbook-cover-1x.png.pagespeed.ic.4az-yn4Ls88f-zqXtYcq.png) no-repeat left top}@media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min--moz-device-pixel-ratio:2),only screen and (-o-min-device-pixel-ratio:2/1),only screen and (min-device-pixel-ratio:2),only screen and (min-resolution:192dpi),only screen and (min-resolution:2dppx){#meta .book-cover{background:url(https://1-ps.googleusercontent.com/sk/bYSmB63yuhjL_l7bPRuu4R3ENi/www.igvita.com/posts/projects/xbook-cover-2x.png.pagespeed.ic.o0UmCTAOnlDnuX3TNk3O.png) no-repeat left top;background-size:137px 178px}}#meta .book{padding:1.5em 2em 1.5em 2em;color:#bfbfbf}pre code{padding:1em!important;border-radius:1em;background:#272727;display:block;color:#bfbfbf}code{padding:1px 4px 3px 4px;border-radius:5px;color:#666}img.center{margin-right:auto;margin-left:auto;display:block}a.about{float:right;font-size:13px;padding-left:3em}#comments{margin-top:1em}#copyright{background:#000;padding:1em 2em}#copyright span{font-size:11px;color:#bfbfbf}.button{background:#77d42a;background:-moz-linear-gradient(top,#77d42a 0,#5cb811 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#77d42a),color-stop(100%,#5cb811));background:-webkit-linear-gradient(top,#77d42a 0,#5cb811 100%);background:-o-linear-gradient(top,#77d42a 0,#5cb811 100%);background:-ms-linear-gradient(top,#77d42a 0,#5cb811 100%);padding:.5em 1.25em;border-radius:8px;border:1px solid #268a16;font-weight:bold;color:#306108;text-shadow:1px 1px 0 #aade7c;text-decoration:none!important}.button:hover{color:#00008f}.book-cover{width:138px;height:200px;float:left;margin-right:1.5em}.callout{font-size:95%;font-style:italic;background-color:#f0f0f0;padding:1em;border-radius:6px;border-top:1px solid #969696;border-bottom:1px solid #969696}.author-callout{font-size:95%;font-style:italic;background-color:#fafaff;padding:1em;margin-top:2em;border-top:1px solid #b6b6b6}.author-callout img{float:left;margin:.2em .75em 0 0}.social{padding:.5em 1em;background-color:#eee;border-top:1px solid #b6b6b6;border-bottom:1px solid #b6b6b6}.social a{text-decoration:none;font-weight:bold}@media only screen and (max-width:480px){header span,header b,footer .rss{display:none}#meta .group{background:#272727;background-image:none}#meta{max-height:none}}@media only screen and (max-device-width:768px){header,#main,#copyright{padding:1em 1em}}@media print{@page { margin: 0.5cm; }}.o{color:#f92672}.p{color:#f8f8f2}.kd{color:#66d9ef}.s{color:#e6db74}.na{color:#a6e22e}.nb{color:#f8f8f2}.nx{color:#a6e22e}.nt{color:#f92672}.s2{color:#e6db74}</style>
+    <link rel="manifest" href="https://www.igvita.com/manifest.json">
+    <!-- <link rel="icon" sizes="any" href="/images/icon.svg"  type="image/svg+xml"> -->
+    <link rel="icon" sizes="192x192" href="https://1-ps.googleusercontent.com/sk/bYSmB63yuhjL_l7bPRuu4R3ENi/www.igvita.com/images/xicon.png.pagespeed.ic.66EDQCEi2Y8nBJV971xu.png">
+    <meta name="theme-color" content="#000">
+    <meta name="author" content="Ilya Grigorik">
+    <meta name="twitter:card" content="summary">
+    <meta name="description" content="The preconnect HTML hint allows the application to tell the browser which sockets it will need ahead of initiating the actual requests; preconnect eliminates DNS, TCP, and TLS roundtrips from the request&#39;s critical path.">
+    <meta name="twitter:description" content="The preconnect HTML hint allows the application to tell the browser which sockets it will need ahead of initiating the actual requests; preconnect eliminates DNS, TCP, and TLS roundtrips from the request&#39;s critical path.">
+    <meta property="og:image" content="https://www.igvita.com/posts/15/socket-setup.png">
+    <meta name="twitter:image:src" content="https://www.igvita.com/posts/15/socket-setup.png">
+    <meta name="twitter:creator" content="@igrigorik">
+    <meta name="twitter:url" content="https://www.igvita.com/2015/08/17/eliminating-roundtrips-with-preconnect/">
+    <meta name="twitter:title" content="Eliminating Roundtrips with Preconnect">
+    <meta property="twitter:account_id" content="9980812">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <link rel="canonical" href="https://www.igvita.com/2015/08/17/eliminating-roundtrips-with-preconnect/">
+
+</head>
+
+<body>
+<div id="container">
+    <header>
+        <div class="content">
+            <a href="https://www.igvita.com/">igvita.com</a> <b>&nbsp;|&nbsp;</b> <span>a goal is a dream with a deadline</span>
+            <a href="https://www.igvita.com/" class="about">about</a>
+        </div>
+    </header>
