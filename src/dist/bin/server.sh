@@ -17,6 +17,7 @@ let GB=`free -m | grep '^Mem:' | awk '{print $2}'`\*80/102400
 HEAP="$GB"g
 
 JAVA_OPTS="-Xmx256M \
+-Dserver.chunk.pause=600 \
 "
 
 ################ Classpath #############################
