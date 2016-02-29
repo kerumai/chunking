@@ -148,8 +148,6 @@ Pretend this is a very large JS file.
 
 $( document ).ready(function() {
 
-    window.performance.mark('rum_page_ready');
-
     var duration = Date.now() - window.performance.timing.fetchStart;
 
     $('#page_ready').text(duration + "ms");
