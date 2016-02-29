@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 public class AppHandler extends ChannelInboundHandlerAdapter
 {
     private static final Logger LOG = LoggerFactory.getLogger(AppHandler.class);
-    private static final DynamicLongProperty CHUNK_PAUSE_MS = new DynamicLongProperty("server.chunk.pause", 300);
+    private static final DynamicLongProperty CHUNK_PAUSE_MS = new DynamicLongProperty("server.chunk.pause", 750);
     private HttpRequest request = null;
 
     @Override

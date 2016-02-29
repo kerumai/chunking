@@ -8,18 +8,35 @@
 
   <title>Sample Site</title>
 
-      <!--<link rel="preconnect" href="https://fonts.gstatic.com">-->
-
-      <link rel="prefetch" href="https://sample.kerumai.com/clean/cJZKeOuBrn4kERxqtaUH3ZBw1xU1rKptJj_0jans920.woff2">
-      <link rel="prefetch" href="https://sample.kerumai.com/clean/cover.jpg">
-
       <link rel="favicon" href="/clean/favicon.ico" type="image/x-icon">
 
       <link rel='stylesheet' href='/clean/css/fonts.css' type='text/css'>
-      <link rel="stylesheet" href="/clean/css/main.css" type='text/css'>
+      <link rel="stylesheet" href="/clean/css/pixyll.css" type='text/css'>
 
-      <script type="application/javascript" src="https://code.jquery.com/jquery-1.12.0.js" defer></script>
-      <script type="application/javascript" src="script.js" defer></script>
+      <style type="text/css">
+          body {
+              font-family: 'SansSerif';
+              background-image: url(/clean/background.jpg);
+              background-origin: content-box;
+              background-size: 100% auto;
+              background-color: rgb(105,134,167);
+              background-repeat: no-repeat;
+          }
+      </style>
+
+      <script type="application/javascript" src="/clean/backbone.js" defer></script>
+      <script type="application/javascript" src="/clean/jquery-1.12.0.js" defer></script>
+      <script type="application/javascript" src="/clean/script.js" defer></script>
 
 </head>
+<body>
 
+<div class="site-wrap">
+<div class="post p2 p-responsive wrap" role="main">
+<div class="measure">
+
+    <p style="font-size: 0.7em"><a href="https://kerumai.com/">kerumai.com</a></p>
+
+    <h2>Chunking Sample</h2>
+
+    <p>Time to Page Ready = <b><span id="page_ready"></span></b></p>
